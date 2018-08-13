@@ -1,0 +1,13 @@
+alias l "ls -alF"
+alias home='cd ~'
+alias lock='/System/Library/CoreServices/Menu\ Extras/user.menu/Contents/Resources/CGSession -suspend'
+
+function desktop_hide
+	defaults write com.apple.finder CreateDesktop -bool false
+	killall Finder
+end
+
+function desktop_live 
+	defaults write com.apple.finder CreateDesktop -bool true
+	killall Finder
+end
